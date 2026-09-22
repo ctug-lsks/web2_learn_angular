@@ -1,0 +1,35 @@
+<p>product-list-component works!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Hình ảnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (p of products; track $index) {
+        @if(p.price < 0){ <tr style="color: red;">
+            <td>{{ p.id }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.price }}</td>
+            <td><img [src]="p.image"></td>
+            </tr>
+            }
+            @else{
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+                <td><img [src]="p.image"></td>
+            </tr>
+            }
+            }
+            @empty{
+            <tr>
+                <td colspan="4">Not found product!!!</td>
+            </tr>
+            }
+    </tbody>
+</table>

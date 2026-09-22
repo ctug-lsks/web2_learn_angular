@@ -1,0 +1,32 @@
+<p>binding-event-component works!</p>
+<table>
+    <tr>
+        <td colspan="2">Phương trình bậc 1</td>
+    </tr>
+    <tr>
+        <td>Hệ số a:</td>
+        <td>
+            <input type="number" [value]="hsa" #viewhsa>
+        </td>
+    </tr>
+    <tr>
+        <td>Hệ số b:</td>
+        <td>
+            <input type="number" [value]="hsb" #viewhsb>
+        </td>
+    </tr>
+    <tr>
+        <td>Kết quả:</td>
+        <td id="td_kq" #kq></td>
+    </tr>
+    <tr>
+        <td>Kết quả 2:</td>
+        <td id="td_kq_2"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="giaipt(viewhsa.value,viewhsb.value,kq)">Giải</button>
+            <button (click)="reset(viewhsa, viewhsb, kq)">PT mới</button>
+        </td>
+    </tr>
+</table>

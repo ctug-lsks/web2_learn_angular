@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { Product } from '../../classes/Products';
+
+@Component({
+  selector: 'app-product-dropdown-list-component',
+  standalone: false,
+  styleUrl: './product-dropdown-list-component.css',
+  templateUrl: './product-dropdown-list-component.html',
+})
+export class ProductDropdownListComponent {
+  products: Product[] = [
+    { id: 1, name: "Product 1", price: 100, image: "https://media.techz.vn/resize_x700x/media2019/source/Alinht5/Screenshot_2574.jpg" },
+    { id: 2, name: "Product 2", price: -200, image: "https://cdn.tgdd.vn/Files/2021/04/24/1345934/top-9-loai-meo-canh-dep-va-pho-bien-nhat-viet-nam-202203261329483818.jpg" },
+    { id: 3, name: "Product 3", price: 300, image: "https://cdn.hstatic.net/200000945871/file/cac-loai-meo-canh-8_574213f2f5a64a0d9726cd92ed20ae15.jpg" },
+    { id: 4, name: "Product 4", price: -400, image: "https://th.bing.com/th/id/R.3db23af5252884e1410741c8aa3ff1fa?rik=WMjX8mzh5bxflQ&pid=ImgRaw&r=0" },
+    { id: 5, name: "Product 5", price: 500, image: "https://i.pinimg.com/736x/9d/55/a8/9d55a8b8810a88d9bbff4bb82c38a40e.jpg" },
+  ];
+}
