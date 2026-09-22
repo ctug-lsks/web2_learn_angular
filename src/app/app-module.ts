@@ -41,4 +41,4 @@ import { ServiceProductImageEventDetail } from './chuong-3/ex13/service-product-
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [App],
 })
-export class AppModule {}
+export class AppModule { }
