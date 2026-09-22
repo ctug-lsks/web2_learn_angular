@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { Product } from '../../classes/Products';
+import { ProductHttpHandleErrorService } from '../../services/product-http-handle-error-service';
 
 @Component({
   selector: 'app-product-http-handle-error-service-component',
@@ -6,4 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './product-http-handle-error-service-component.css',
   templateUrl: './product-http-handle-error-service-component.html',
 })
-export class ProductHttpHandleErrorServiceComponent {}
+export class ProductHttpHandleErrorServiceComponent {
+  product = signal<Product[]>([]);
+  errMessage = signal("")
+  constructor(private _service: ProductHttpHandleErrorService) { }
+  ngOnInit(): void {
+    this._service.getProductList().subscribe({
+      next: (data) => {
+        this.product.set(data);
+      },
+      error: (err) => {
+        this.errMessage.set(err)
+      }
+    })
+  }
+}

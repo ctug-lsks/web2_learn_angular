@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http"
-import { Observable, retry, catchError, throwError} from 'rxjs';
+import { Observable, retry, catchError, throwError } from 'rxjs';
 import { Product } from '../classes/Products';
 
 @Injectable({
@@ -16,8 +16,8 @@ export class ProductHttpHandleErrorService {
                 retry(3),
                 catchError(this.handleError)
             )
-}
+    }
     handleError(error: HttpErrorResponse) {
-        return throwError(()=> new Error(error.message));
+        return throwError(() => new Error(error.message));
     }
 }
