@@ -18,7 +18,7 @@ export class ProductHttpHandleErrorServiceComponent {
         this.product.set(data);
       },
       error: (err) => {
-        this.errMessage.set(err)
+        this.errMessage.set(err?.message || String(err));
       }
     })
   }
