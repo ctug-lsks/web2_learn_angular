@@ -1,0 +1,49 @@
+[
+    {
+        "CustomerTypeId": 1,
+        "CustomerTypeName": "VIP",
+        "Customers": [
+            {
+                "Id": "Cus123",
+                "Name": "Obama",
+                "Email": "obama@gmail.com",
+                "Age": 67,
+                "Image": "https://tse2.mm.bing.net/th/id/OIP._yDt1z3DLco6o0lL3cnkXgHaJY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            },
+            {
+                "Id": "Cus456",
+                "Name": "Kim jong Un",
+                "Email": "unun@gmail.com",
+                "Age": 38,
+                "Image": "https://tse3.mm.bing.net/th/id/OIP.jb6-_G28lQMALgV39dYHNAHaKS?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            },
+            {
+                "Id": "Cus789",
+                "Name": "Putin",
+                "Email": "putin@gmail.com",
+                "Age": 77,
+                "Image": "https://tse4.mm.bing.net/th/id/OIP.Gt6ZUA8KPsLJixjboNfSxwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            }
+        ]
+    },
+    {
+        "CustomerTypeId": 2,
+        "CustomerTypeName": "Normal",
+        "Customers": [
+            {
+                "Id": "Cus000",
+                "Name": "Hồ Cẩm Đào",
+                "Email": "hodao@gmail.com",
+                "Age": 16,
+                "Image": "https://media.techz.vn/resize_x700x/media2019/source/Alinht5/Screenshot_2574.jpg"
+            },
+            {
+                "Id": "Cus111",
+                "Name": "Tap Can Binh",
+                "Email": "binhbinh@gmail.com",
+                "Age": 67,
+                "Image": "https://cdn.tgdd.vn/Files/2021/04/24/1345934/top-9-loai-meo-canh-dep-va-pho-bien-nhat-viet-nam-202203261329483818.jpg"
+            }
+        ]
+    }
+]

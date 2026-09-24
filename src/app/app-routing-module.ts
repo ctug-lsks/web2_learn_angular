@@ -8,7 +8,7 @@ import { ProductHttpHandleErrorServiceComponent } from './chuong-3/product-http-
 import { ServiceProductImageEvent } from './chuong-3/ex13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './chuong-3/ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { CatalogComponent } from './chuong-3/ex14/catalog-component/catalog-component';
-
+import { GroupCustomers } from './chuong-3/ex18/group-customers/group-customers';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'service-product-image-event', component: ServiceProductImageEvent },
   { path: 'service-product-image-event/:id', component: ServiceProductImageEventDetail },
   { path: 'catalog', component: CatalogComponent },
+  { path: 'group-customers', component: GroupCustomers },
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ServiceProductImageEvent } from './chuong-3/ex13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './chuong-3/ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { CatalogComponent } from './chuong-3/ex14/catalog-component/catalog-component';
+import { GroupCustomers } from './chuong-3/ex18/group-customers/group-customers';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import { CatalogComponent } from './chuong-3/ex14/catalog-component/catalog-comp
     ServiceProductImageEvent,
     ServiceProductImageEventDetail,
     CatalogComponent,
+    GroupCustomers,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
