@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, retry, catchError, throwError, map } from 'rxjs';
 import { CustomerType } from '../classes/Customers';
 
 @Injectable({
@@ -11,6 +11,13 @@ export class CustomerHttpService {
 
     constructor(private _http: HttpClient) { }
     getCustomerList(): Observable<CustomerType[]> {
-        return this._http.get<CustomerType[]>(this._url);
+        return this._http.get<CustomerType[]>(this._url)
+            .pipe(
+                retry(3),
+                catchError(this.handleError)
+            )
+    }
+    handleError(error: HttpErrorResponse) {
+        return throwError(() => new Error(error.message));
     }
 }

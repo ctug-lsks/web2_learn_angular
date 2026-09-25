@@ -1,4 +1,4 @@
-export interface Customer {
+export interface Customer { //lưu ý: datasets và classes ở ngoài app
     Id: string;
     Name: string;
     Email: string;

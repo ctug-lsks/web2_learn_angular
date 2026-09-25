@@ -12,9 +12,17 @@
         @for (p of products(); track $index) {
         <tr>
             <td>{{ p.id }}</td>
-            <td>{{ p.name }}</td>
+            <td>
+                <a routerLink="/product/{{p.id}}">
+                    {{ p.name }}
+                </a>
+            </td>
             <td>{{ p.price }}</td>
-            <td><img [src]="p.image" height="100px" width="100px"></td>
+            <td>
+                <a routerLink="/product/{{p.id}}">
+                    <img [src]="p.image" height="100px" width="100px">
+                </a>
+            </td>
         </tr>
         }
         @empty{

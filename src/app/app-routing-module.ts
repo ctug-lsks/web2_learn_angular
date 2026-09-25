@@ -9,6 +9,11 @@ import { ServiceProductImageEvent } from './chuong-3/ex13/service-product-image-
 import { ServiceProductImageEventDetail } from './chuong-3/ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { CatalogComponent } from './chuong-3/ex14/catalog-component/catalog-component';
 import { GroupCustomers } from './chuong-3/ex18/group-customers/group-customers';
+import { ProductDetailComponent } from './chuong-4/product-detail-component/product-detail-component';
+import { ProductListAdvancedComponent } from './chuong-4/product-list-advanced-component/product-list-advanced-component';
+import { ProductListSearchComponent } from './chuong-4/product-list-search-component/product-list-search-component';
+import { PageNotFoundComponent } from './chuong-4/page-not-found-component/page-not-found-component';
+import { Contact } from './chuong-1-2/contact/contact';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -20,6 +25,18 @@ const routes: Routes = [
   { path: 'service-product-image-event/:id', component: ServiceProductImageEventDetail },
   { path: 'catalog', component: CatalogComponent },
   { path: 'group-customers', component: GroupCustomers },
+  { path: "product/:id", component: ProductDetailComponent },
+  { path: "products", component: ProductListAdvancedComponent },
+  { path: "search-product", component: ProductListSearchComponent },
+  { path: "", component: Contact },
+  {
+    path: "samplenested", component: ProductListAdvancedComponent,
+    children: [
+      { path: 'search', component: ProductListSearchComponent },
+      { path: 'detail/:id', component: ProductDetailComponent },
+    ]
+  },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
