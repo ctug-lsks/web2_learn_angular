@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Homework } from './homework/homework';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Contact } from './chuong-1-2/contact/contact';
 import { BindingPropertyComponent } from './chuong-1-2/binding/binding-property-component/binding-property-component';
 import { BindingClassComponent } from './chuong-1-2/binding/binding-class-component/binding-class-component';
@@ -24,7 +24,9 @@ import { ProductDetailComponent } from './chuong-4/product-detail-component/prod
 import { ProductListAdvancedComponent } from './chuong-4/product-list-advanced-component/product-list-advanced-component';
 import { ProductListSearchComponent } from './chuong-4/product-list-search-component/product-list-search-component';
 import { PageNotFoundComponent } from './chuong-4/page-not-found-component/page-not-found-component';
-import { LazyComponent } from './chuong-4/lazy-component/lazy-component';
+import { CourseRegistrationComponent } from './chuong-5/course-registration-component/course-registration-component';
+import { CourseRegistrationReactiveComponent } from './chuong-5/course-registration-reactive-component/course-registration-reactive-component';
+import { LoginComponent } from './chuong-5/login-component/login-component';
 
 @NgModule({
   declarations: [
@@ -49,10 +51,12 @@ import { LazyComponent } from './chuong-4/lazy-component/lazy-component';
     ProductListAdvancedComponent,
     ProductListSearchComponent,
     PageNotFoundComponent,
-    LazyComponent,
+    CourseRegistrationComponent,
+    CourseRegistrationReactiveComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [App],
 })
-export class AppModule {}
+export class AppModule { }

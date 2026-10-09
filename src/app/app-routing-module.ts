@@ -14,6 +14,10 @@ import { ProductListAdvancedComponent } from './chuong-4/product-list-advanced-c
 import { ProductListSearchComponent } from './chuong-4/product-list-search-component/product-list-search-component';
 import { PageNotFoundComponent } from './chuong-4/page-not-found-component/page-not-found-component';
 import { Contact } from './chuong-1-2/contact/contact';
+import { authGuard } from './classes/auth.guard';
+import { CourseRegistrationComponent } from './chuong-5/course-registration-component/course-registration-component';
+import { LoginComponent } from './chuong-5/login-component/login-component';
+import { CourseRegistrationReactiveComponent } from './chuong-5/course-registration-reactive-component/course-registration-reactive-component';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -28,6 +32,10 @@ const routes: Routes = [
   { path: "product/:id", component: ProductDetailComponent },
   { path: "products", component: ProductListAdvancedComponent },
   { path: "search-product", component: ProductListSearchComponent },
+  { path: "contact", component: Contact },
+  { path: "course-register", component: CourseRegistrationComponent },
+  { path: "course-reactive-register", component: CourseRegistrationReactiveComponent },
+  { path: "login", component: LoginComponent },
   { path: "", component: Contact },
   {
     path: "samplenested", component: ProductListAdvancedComponent,
@@ -35,6 +43,12 @@ const routes: Routes = [
       { path: 'search', component: ProductListSearchComponent },
       { path: 'detail/:id', component: ProductDetailComponent },
     ]
+  },
+  {
+    path: "lazyinfo",
+    loadComponent: () => import("./chuong-4/lazy-component/lazy-component")
+      .then(c => c.LazyComponent),
+    canActivate: [authGuard]
   },
   { path: "**", component: PageNotFoundComponent }
 ];
