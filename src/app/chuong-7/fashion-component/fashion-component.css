@@ -1,0 +1,69 @@
+.fashion-list-container {
+  max-width: 1200px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fashion-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.fashion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.fashion-img-wrapper {
+  height: 240px;
+  background-color: #f8f9fa;
+}
+
+.fashion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.fashion-card:hover .fashion-img {
+  transform: scale(1.05);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8rem;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 4rem;
+}
+
+.slug-box code {
+  font-size: 0.82rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.btn-dark {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.btn-dark:hover {
+  background-color: #000000;
+  border-color: #000000;
+}

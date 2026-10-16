@@ -1,0 +1,84 @@
+<div class="fashion-detail-container container py-4">
+    <!-- Top Navigation & Search Bar -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <button class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2 px-3 py-2" (click)="goBack()">
+            <span>←</span>
+            <span class="fw-semibold">Quay lại danh sách</span>
+        </button>
+
+        <!-- Search Tool -->
+        <div class="input-group search-box" style="max-width: 400px;">
+            <span class="input-group-text bg-white border-end-0 text-muted">🔍</span>
+            <input type="text" class="form-control border-start-0 ps-0" placeholder="Tìm kiếm theo từ khoá..."
+                #fashionIdInput [value]="currentSearchTerm()" (keyup.enter)="searchFashion(fashionIdInput.value)">
+            <button class="btn btn-dark px-3" (click)="searchFashion(fashionIdInput.value)">
+                Tìm
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    @if (loading()) {
+    <div class="text-center py-5">
+        <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="text-muted">Đang tải thông tin chi tiết...</p>
+    </div>
+    }
+
+    <!-- Error Alert -->
+    @if (errMessage()) {
+    <div class="alert alert-warning shadow-sm border-0 d-flex align-items-center gap-3 p-3 mb-4 rounded-3" role="alert">
+        <span class="fs-4">⚠️</span>
+        <div>
+            <strong>Thông báo:</strong> {{ errMessage() }}
+        </div>
+    </div>
+    }
+
+    <!-- Fashion Detail Presentation -->
+    @if (fashion() && !loading()) {
+    <div class="card border-0 shadow-sm fashion-article-card overflow-hidden">
+        <div class="row g-0">
+            <!-- Left: Fashion Image -->
+            <div
+                class="col-12 col-lg-5 p-3 p-md-4 bg-light d-flex align-items-center justify-content-center border-end-lg">
+                <div class="fashion-img-container rounded-3 overflow-hidden shadow-sm w-100">
+                    <img [src]="getImageSrc(fashion())" class="img-fluid w-100 h-100 object-fit-cover"
+                        [alt]="fashion()?.fashion_subject">
+                </div>
+            </div>
+
+            <!-- Right: Article Content -->
+            <div class="col-12 col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+                <div>
+                    @if (fashion()?.style) {
+                    <div class="mb-3">
+                        <span class="badge bg-dark text-uppercase px-2.5 py-1.5 shadow-sm">
+                            {{ fashion()?.style }}
+                        </span>
+                    </div>
+                    }
+
+                    <h1 class="display-6 fw-bold text-dark mb-4 fashion-title">
+                        {{ fashion()?.fashion_subject }}
+                    </h1>
+
+                    <hr class="my-4 text-muted opacity-25">
+
+                    <div class="article-body">
+                        <p class="lead text-dark fw-normal mb-4" style="line-height: 1.8;">
+                            {{ fashion()?.fashion_detail }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Footer -->
+                <div class="pt-4 border-top mt-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

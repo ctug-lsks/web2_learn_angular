@@ -24,6 +24,10 @@ import { BookDetailComponent } from './chuong-6/book-detail-component/book-detai
 import { BookNewComponent } from './chuong-6/book-new-component/book-new-component';
 import { BookUpdateComponent } from './chuong-6/book-update-component/book-update-component';
 import { BookDeleteComponent } from './chuong-6/book-delete-component/book-delete-component';
+import { FashionComponent } from './chuong-7/fashion-component/fashion-component';
+import { FashionDetailComponent } from './chuong-7/fashion-detail-component/fashion-detail-component';
+import { FashionNewComponent } from './chuong-7/fashion-new-component/fashion-new-component';
+import { FashionUpdateComponent } from './chuong-7/fashion-update-component/fashion-update-component';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -48,6 +52,11 @@ const routes: Routes = [
   { path: "book-new", component: BookNewComponent },
   { path: "book-update", component: BookUpdateComponent },
   { path: "book-delete", component: BookDeleteComponent },
+  { path: "fashion-list", component: FashionComponent },
+  { path: "fashion-detail", component: FashionDetailComponent },
+  { path: "fashion-detail/:id", component: FashionDetailComponent },
+  { path: "fashion-new", component: FashionNewComponent },
+  { path: "fashion-update", component: FashionUpdateComponent },
   { path: "", component: Contact },
   {
     path: "samplenested", component: ProductListAdvancedComponent,
