@@ -28,6 +28,7 @@ import { FashionComponent } from './chuong-7/fashion-component/fashion-component
 import { FashionDetailComponent } from './chuong-7/fashion-detail-component/fashion-detail-component';
 import { FashionNewComponent } from './chuong-7/fashion-new-component/fashion-new-component';
 import { FashionUpdateComponent } from './chuong-7/fashion-update-component/fashion-update-component';
+import { FashionDeleteComponent } from './chuong-7/fashion-delete-component/fashion-delete-component';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: "fashion-detail/:id", component: FashionDetailComponent },
   { path: "fashion-new", component: FashionNewComponent },
   { path: "fashion-update", component: FashionUpdateComponent },
+  { path: "fashion-delete", component: FashionDeleteComponent },
   { path: "", component: Contact },
   {
     path: "samplenested", component: ProductListAdvancedComponent,

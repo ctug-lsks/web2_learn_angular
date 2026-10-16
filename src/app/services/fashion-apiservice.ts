@@ -41,6 +41,10 @@ export class FashionAPIService {
             retry(3),
             catchError(this.handleError))
     }
-
-
+    deleteFashion(fashionId: string): Observable<any> {
+        return this._http.delete<any>("/fashions/" + fashionId, this.requestOptions).pipe(
+            map(res => JSON.parse(res) as Fashion),
+            retry(3),
+            catchError(this.handleError))
+    }
 }
