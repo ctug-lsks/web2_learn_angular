@@ -18,6 +18,12 @@ import { authGuard } from './classes/auth.guard';
 import { CourseRegistrationComponent } from './chuong-5/course-registration-component/course-registration-component';
 import { LoginComponent } from './chuong-5/login-component/login-component';
 import { CourseRegistrationReactiveComponent } from './chuong-5/course-registration-reactive-component/course-registration-reactive-component';
+import { FakeProductComponent } from './chuong-6/fake-product-component/fake-product-component';
+import { BooksComponent } from './chuong-6/books-component/books-component';
+import { BookDetailComponent } from './chuong-6/book-detail-component/book-detail-component';
+import { BookNewComponent } from './chuong-6/book-new-component/book-new-component';
+import { BookUpdateComponent } from './chuong-6/book-update-component/book-update-component';
+import { BookDeleteComponent } from './chuong-6/book-delete-component/book-delete-component';
 
 const routes: Routes = [
   { path: 'learn_directive', component: ProductListComponent },
@@ -36,6 +42,12 @@ const routes: Routes = [
   { path: "course-register", component: CourseRegistrationComponent },
   { path: "course-reactive-register", component: CourseRegistrationReactiveComponent },
   { path: "login", component: LoginComponent },
+  { path: "fake-product", component: FakeProductComponent },
+  { path: "book-list", component: BooksComponent },
+  { path: "book-detail", component: BookDetailComponent },
+  { path: "book-new", component: BookNewComponent },
+  { path: "book-update", component: BookUpdateComponent },
+  { path: "book-delete", component: BookDeleteComponent },
   { path: "", component: Contact },
   {
     path: "samplenested", component: ProductListAdvancedComponent,
